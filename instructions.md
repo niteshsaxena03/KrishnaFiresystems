@@ -183,3 +183,66 @@ Thanking you
 
 
 Deals in : various Indian & Imported brands with best quality products and services
+
+# Cursor Instructions for Krishna Fire Systems Frontend
+
+1. Project initialization  
+   - Use the existing Vite React project.  
+   - Install React Router DOM.
+
+2. Global configuration  
+   - Add a viewport meta tag for mobile support.  
+   - Define a theme object in a central file for colors and spacing.  
+   - Create a utility or hook to detect mobile screens at a 768px breakpoint.
+
+3. Folder structure  
+   - src/components  
+   - src/pages  
+   - src/styles or src/theme  
+   - src/routes  
+
+4. Styling approach  
+   - All styling must be done inline using React’s `style={{…}}` prop.  
+   - Do not create or import any CSS or CSS-in-JS files.  
+   - Use the theme object for all colors and spacing values.  
+   - Use conditional logic based on the mobile flag to adjust layouts, font sizes, paddings, and flex/grid directions.
+
+5. Routing  
+   - Set up client-side routing with React Router.  
+   - Include routes for Home, About, Services, Projects, and Contact.  
+   - Always render a Navbar at the top and a Footer at the bottom regardless of the current route.
+
+6. Navbar & Footer  
+   - Navbar: fixed at top, uses primary theme color as background, contains links to all pages, collapses into a mobile menu on small screens.  
+   - Footer: full-width bar with company logo, address, phone, email, and social links; stacks content vertically on mobile.
+
+7. Page requirements  
+   - **Home**: hero section with full-width background image, overlay heading and subheading, a centered call-to-action button; a short intro paragraph; highlight of one key service.  
+   - **About**: company overview text, bullet list of certifications and key facts, timeline or “15+ years” highlight.  
+   - **Services**: display each service as a card in a responsive row or column layout; each card shows service name and 1–2-line description.  
+   - **Projects**: grid of project/client cards with name and brief summary; adjust number of columns based on screen width.  
+   - **Contact**: two-column layout (form on one side, contact details and embedded map on the other); stack vertically on mobile; form fields for name, email, phone, message; submit button.
+
+8. Mobile optimization  
+   - On screens ≤768px, switch all multi-column layouts into a single column.  
+   - Increase tap targets: buttons and links should have generous padding.  
+   - Adjust font sizes and line heights for readability on small devices.
+
+9. Assets & content  
+   - Hard-code placeholder text and image URLs where needed.  
+   - Use descriptive alt text for all images.  
+   - Include a Google Maps embed link for the company address on the Contact page.
+
+10. Final checks  
+    - Verify that no CSS files are present or imported.  
+    - Confirm all styles are inline and reference the theme.  
+    - Test all routes and ensure the Navbar and Footer appear on every page.  
+    - Test on both desktop and mobile viewport widths.
+
+Paste this into Cursor as-is; it will generate the project structure, pages, components, routing, inline styling, and mobile-first adjustments automatically.
+
+11.Design Theme & Aesthetics
+Use a dark color palette featuring shades of blue, black, and red only.
+Incorporate smooth gradients (e.g., blue→black, black→red) for backgrounds, buttons, and section overlays.
+Aim for a modern, “cool” look: sharp yet minimal layouts, subtle shadows or glows, and crisp, sans-serif typography.
+Ensure all gradients and dark tones maintain sufficient contrast for readability and accessibility.
