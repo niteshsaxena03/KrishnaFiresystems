@@ -11,7 +11,7 @@ const Layout = () => {
     display: "flex",
     flexDirection: "column",
     minHeight: "100vh",
-    paddingTop: "60px", // To account for fixed navbar
+    paddingTop: "70px", // Increased to account for taller navbar
   };
 
   const contentStyle = {

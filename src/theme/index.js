@@ -10,11 +10,18 @@ export const theme = {
     white: "#FFFFFF", // White
     lightGray: "#E5E5E5", // Light gray for backgrounds
     gray: "#707070", // Gray for text
+    // New navbar-specific colors
+    navbarBlue: "#0A1E3A", // Richer, darker blue for navbar
+    navHighlight: "#1E90FF", // Bright blue for active/hover states
+    navGradientStart: "#091833", // Start color for navbar gradient
+    navGradientEnd: "#183059", // End color for navbar gradient
   },
   gradients: {
     blueToBlack: "linear-gradient(135deg, #0B2F5C 0%, #000000 100%)",
     blackToRed: "linear-gradient(135deg, #000000 0%, #A30000 100%)",
     blueToDarkBlue: "linear-gradient(135deg, #1D5291 0%, #051B38 100%)",
+    // New navbar gradient
+    navbarGradient: "linear-gradient(to right, #091833 0%, #183059 100%)",
   },
   spacing: {
     xs: "0.25rem", // 4px
@@ -35,6 +42,7 @@ export const theme = {
     md: "0 4px 8px rgba(0, 0, 0, 0.2)",
     lg: "0 8px 16px rgba(0, 0, 0, 0.3)",
     glow: "0 0 8px rgba(29, 82, 145, 0.6)",
+    navbarShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
   },
   typography: {
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
