@@ -1,9 +1,27 @@
 import { useState } from "react";
 import { theme } from "../theme";
 import { useMobile } from "../hooks/useMobile";
+import emailjs from "@emailjs/browser";
+import { MapContainer, TileLayer, Marker, Popup  , Circle } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+// markers : 
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+});
+
+
 
 const Contact = () => {
   const isMobile = useMobile();
+  const position = [28.536802035038527, 77.22817935200763]; 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,10 +39,50 @@ const Contact = () => {
     }));
   };
 
+  const sendEmail = (formData) => {
+  // Prepare parameters to send to EmailJS
+  const templateParams = {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    subject: formData.subject,
+    message: formData.message,
+  };
+
+  emailjs
+    .send(
+      "service_ru9c4u9",   
+      "template_ofuae3r", 
+      templateParams,
+      "5O2ipjpZs8QcmPHZB"      
+    )
+    .then(
+      (result) => {
+        console.log("Email successfully sent!", result.text);
+        setFormSubmitted(true);
+        // Reset form after success
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          subject: "",
+        });
+      },
+      (error) => {
+        console.error("Email sending failed:", error.text);
+        alert("Failed to send message. Please try again later.");
+      }
+    );
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data submitted:", formData);
-    // Here you would typically send the data to a server
+
+    // Email Js Part : 
+    sendEmail(formData)
+
     setFormSubmitted(true);
     // Reset form after submission
     setFormData({
@@ -313,19 +371,24 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
           <div style={mapContainerStyle}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5308501746373!2d77.19119687548754!3d28.616054175960448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d229d3aaaaa71%3A0xc289649add6d96c8!2sAnsal%20Chamber%20I%2C%20Bhikaji%20Cama%20Place%2C%20New%20Delhi%2C%20Delhi%20110066!5e0!3m2!1sen!2sin!4v1683805070782!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Krishna Fire Systems office location"
-            ></iframe>
-          </div>
+          <MapContainer center={position} zoom={14} style={{ height: '100%', width: '100%' }}>
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position}>
+              <Popup>
+                Krishna Fire Systems Office<br />Ansals Chamber I, Delhi
+              </Popup>
+            </Marker>
+            <Circle
+              center={position}
+              radius={200} 
+              pathOptions={{ fillOpacity: 0.2 }}
+            />
+          </MapContainer>
+        </div>
         </div>
       </div>
     </div>

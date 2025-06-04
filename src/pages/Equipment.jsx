@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { theme } from "../theme";
+import { theme } from "../theme"; 
 import { useMobile } from "../hooks/useMobile";
+import { EquipmentsimageSet as imageSet  }  from "../assets/equipments" ; 
+
 
 const Equipment = () => {
   const isMobile = useMobile();
@@ -25,8 +27,7 @@ const Equipment = () => {
       description:
         "High-performance electric welding machines used for precision fabrication of fire safety equipment and components.",
       icon: "⚡",
-      image:
-        "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&w=800&q=80",
+      image: imageSet[0]
     },
     {
       name: "Gas Cutting Set",
@@ -36,7 +37,7 @@ const Equipment = () => {
         "Industrial-grade gas cutting sets for precise metal cutting operations in fire equipment manufacturing.",
       icon: "🔥",
       image:
-        "https://images.unsplash.com/photo-1574709755254-12b999f2553f?auto=format&fit=crop&w=800&q=80",
+        imageSet[1],
     },
     {
       name: "Gas Welding Set",
@@ -46,17 +47,17 @@ const Equipment = () => {
         "Gas welding equipment for specialized welding applications requiring controlled heat input.",
       icon: "🔥",
       image:
-        "https://images.unsplash.com/photo-1605901710429-ab5e7be2c587?auto=format&fit=crop&w=800&q=80",
+       imageSet[2],
     },
     {
-      name: "Chain Pulley Block (2 Ton)",
+      name: "Chain Pulley Block (2,5 Ton)",
       quantity: 2,
       category: "lifting",
       description:
-        "2-ton capacity chain pulley blocks for safe lifting and positioning of heavy components during installation.",
+        "2,5-ton capacity chain pulley blocks for safe lifting and positioning of heavy components during installation.",
       icon: "⛓️",
       image:
-        "https://images.unsplash.com/photo-1571388441855-b1a2f45a8ef1?auto=format&fit=crop&w=800&q=80",
+       imageSet[3],
     },
     {
       name: "M.S. Pipe Cutting Machine",
@@ -66,17 +67,7 @@ const Equipment = () => {
         "Specialized pipe cutting machines for precise cutting of mild steel pipes used in fire hydrant and sprinkler systems.",
       icon: "⚙️",
       image:
-        "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "Chain Pulley Block (5 Ton)",
-      quantity: 2,
-      category: "lifting",
-      description:
-        "Heavy-duty 5-ton chain pulley blocks for handling large equipment during installation and maintenance.",
-      icon: "⛓️",
-      image:
-        "https://images.unsplash.com/photo-1582012986780-cf9f34f2b709?auto=format&fit=crop&w=800&q=80",
+        imageSet[4],
     },
     {
       name: "Angle Grinder",
@@ -86,7 +77,7 @@ const Equipment = () => {
         "Versatile angle grinders for cutting, grinding and polishing metal components of fire safety systems.",
       icon: "🔄",
       image:
-        "https://images.unsplash.com/photo-1607275605105-a87104c7af62?auto=format&fit=crop&w=800&q=80",
+        imageSet[5],
     },
     {
       name: "Straight Grinder",
@@ -96,7 +87,7 @@ const Equipment = () => {
         "Straight grinders for precision grinding operations in tight spaces and detailed work.",
       icon: "🔄",
       image:
-        "https://images.unsplash.com/photo-1535813547-3e2a91bdc95b?auto=format&fit=crop&w=800&q=80",
+        imageSet[6],
     },
     {
       name: "Drill Machine (Hammer)",
@@ -106,7 +97,7 @@ const Equipment = () => {
         "Powerful hammer drill machines for concrete drilling during installation of fire safety systems.",
       icon: "🔨",
       image:
-        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+        imageSet[7],
     },
     {
       name: "Pistol Drill Machine",
@@ -116,7 +107,7 @@ const Equipment = () => {
         "Compact pistol-grip drill machines for precision drilling work in confined spaces.",
       icon: "🔨",
       image:
-        "https://images.unsplash.com/photo-1512236077335-f1cda9239c11?auto=format&fit=crop&w=800&q=80",
+        imageSet[8],
     },
     {
       name: "Hydraulic Pump",
@@ -126,7 +117,7 @@ const Equipment = () => {
         "High-pressure hydraulic pumps for testing and commissioning of fire safety equipment.",
       icon: "💧",
       image:
-        "https://images.unsplash.com/photo-1470020037456-967b9a4181b1?auto=format&fit=crop&w=800&q=80",
+       imageSet[9],
     },
   ];
 
@@ -445,11 +436,15 @@ const Equipment = () => {
           <div
             key={index}
             style={{
-              ...equipmentCardStyle,
+              ...equipmentCardStyle,  
               transform: "none", // Initial state
             }}
           >
-            <img src={item.image} alt={item.name} style={equipmentImageStyle} />
+           <img
+            src={item.image.primary? item.image.primary : item.image.secondary}
+            alt={item.name}
+            style={equipmentImageStyle}
+          />
             <div style={equipmentInfoStyle}>
               <div style={iconContainerStyle}>{item.icon}</div>
               <div style={equipmentHeaderStyle}>

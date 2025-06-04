@@ -1,14 +1,31 @@
 import { Link } from "react-router-dom";
 import { theme } from "../theme";
 import { useMobile } from "../hooks/useMobile";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+      
+const [bgImage, setBgImage] = useState(
+    "https://res.cloudinary.com/dhcodkhrw/image/upload/v1749029004/Home_g1dstg.jpg"
+  );
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = bgImage;
+
+    img.onerror = () => {
+      setBgImage(
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467114283/SW/ZL/AL/234876236/fire-system-and-fire-safety-equipment-in-india.jpg"
+      );
+    };
+  }, []);
+
+
   const isMobile = useMobile();
 
   const heroSectionStyle = {
     height: isMobile ? "60vh" : "80vh",
-    backgroundImage:
-      'url("https://images.unsplash.com/photo-1562077772-3bd90403f7f0?q=80&w=2940&auto=format&fit=crop")',
+    backgroundImage: `url("${bgImage}")`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
@@ -17,7 +34,7 @@ const Home = () => {
     justifyContent: "center",
     textAlign: "center",
     color: theme.colors.white,
-    marginTop: "-20px", // To counteract padding in the layout
+    marginTop: "-20px",
     marginLeft: isMobile ? "-1rem" : "-2rem",
     marginRight: isMobile ? "-1rem" : "-2rem",
   };
@@ -29,7 +46,7 @@ const Home = () => {
     right: 0,
     bottom: 0,
     background: theme.gradients.blueToBlack,
-    opacity: 0.7,
+    opacity: 0.63,
   };
 
   const heroContentStyle = {

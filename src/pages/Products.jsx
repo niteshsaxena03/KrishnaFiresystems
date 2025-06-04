@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { theme } from "../theme";
 import { useMobile } from "../hooks/useMobile";
+import { imageSet } from "../assets/products";
 
 const Products = () => {
   const isMobile = useMobile();
@@ -25,8 +26,7 @@ const Products = () => {
       category: "fire-extinguishers",
       description:
         "ISI-marked CO2 fire extinguishers for electrical fires, available in various capacities.",
-      image:
-        "https://images.unsplash.com/photo-1617950268959-f55106539d5c?auto=format&fit=crop&w=800&q=80",
+      image: imageSet[0] ,
       features: [
         "ISI Marked",
         "Pressure Tested",
@@ -41,8 +41,7 @@ const Products = () => {
       category: "alarm-systems",
       description:
         "Microprocessor-based addressable fire alarm control panel with multi-zone capabilities.",
-      image:
-        "https://images.unsplash.com/photo-1620283085693-5e08b1d7518d?auto=format&fit=crop&w=800&q=80",
+      image: imageSet[1] ,
       features: [
         "Addressable Technology",
         "LCD Display",
@@ -57,8 +56,7 @@ const Products = () => {
       category: "hydrant-systems",
       description:
         "Single outlet landing valve for fire hydrant systems, manufactured to IS standards.",
-      image:
-        "https://images.unsplash.com/photo-1522408189481-5fc98386d3e8?auto=format&fit=crop&w=800&q=80",
+      image: imageSet[2] ,
       features: [
         "IS:5290 Compliant",
         "Working Pressure 15 kg/cm²",
@@ -73,8 +71,7 @@ const Products = () => {
       category: "suppression-systems",
       description:
         "Clean agent fire suppression system ideal for server rooms and sensitive equipment areas.",
-      image:
-        "https://images.unsplash.com/photo-1579847188804-2cea4a0d6eeb?auto=format&fit=crop&w=800&q=80",
+      image:  imageSet[3] ,
       features: [
         "Environmentally Friendly",
         "Zero Ozone Depletion",
@@ -89,8 +86,7 @@ const Products = () => {
       category: "hydrant-systems",
       description:
         "Swing-type fire hose reel with 30m hose, compliant with IS:884 standards.",
-      image:
-        "https://images.unsplash.com/photo-1529268209110-62be1d87fe75?auto=format&fit=crop&w=800&q=80",
+      image: imageSet[4] ,
       features: [
         "IS:884 Certified",
         "30m Hose Length",
@@ -105,8 +101,7 @@ const Products = () => {
       category: "alarm-systems",
       description:
         "Photoelectric smoke detector with advanced false alarm prevention technology.",
-      image:
-        "https://images.unsplash.com/photo-1614772903208-d85b2d4c18ef?auto=format&fit=crop&w=800&q=80",
+      image:  imageSet[5] ,
       features: [
         "Dual Sensor Technology",
         "Early Warning",
@@ -121,8 +116,7 @@ const Products = () => {
       category: "safety-equipment",
       description:
         "High-temperature resistant safety helmet for firefighting personnel.",
-      image:
-        "https://images.unsplash.com/photo-1603910234616-3b9a323c0cf0?auto=format&fit=crop&w=800&q=80",
+      image:  imageSet[6] ,
       features: [
         "Heat Resistant",
         "Impact Protection",
@@ -137,8 +131,7 @@ const Products = () => {
       category: "suppression-systems",
       description:
         "Quick response automatic sprinkler head for ceiling installation in commercial buildings.",
-      image:
-        "https://images.unsplash.com/photo-1571173729433-28bf2099d6f4?auto=format&fit=crop&w=800&q=80",
+      image:  imageSet[7] ,
       features: [
         "Various Temperature Ratings",
         "Decorative Finish Options",
@@ -353,11 +346,15 @@ const Products = () => {
             }}
           >
             <div style={productImageContainerStyle}>
-              <img
-                src={product.image}
-                alt={product.name}
-                style={productImageStyle}
-              />
+             <img
+              src={product.image.primary}
+              alt={product.name}
+              style={productImageStyle}
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = product.image.secondary;
+              }}
+            />
             </div>
             <div style={productInfoStyle}>
               <h3 style={productNameStyle}>{product.name}</h3>
