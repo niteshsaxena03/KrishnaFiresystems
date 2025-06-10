@@ -195,8 +195,16 @@ const Navbar = () => {
       <div style={navContainerStyle}>
         <div style={logoContainerStyle}>
           <Link to="/" style={logoStyle}>
-            <span style={logoIconStyle}>🔥</span>
-            KRISHNA FIRE SYSTEMS
+            KRISHNA FIRE
+            <span
+              style={{
+                fontSize: "0.6em",
+                verticalAlign: "super",
+                marginLeft: "2px",
+              }}
+            >
+              ®
+            </span>
           </Link>
         </div>
 

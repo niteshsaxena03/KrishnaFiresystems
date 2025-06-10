@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { theme } from "../theme"; 
+import { theme } from "../theme";
 import { useMobile } from "../hooks/useMobile";
-import { EquipmentsimageSet as imageSet  }  from "../assets/equipments" ; 
-
+import { EquipmentsimageSet as imageSet } from "../assets/equipments";
 
 const Equipment = () => {
   const isMobile = useMobile();
@@ -27,7 +26,7 @@ const Equipment = () => {
       description:
         "High-performance electric welding machines used for precision fabrication of fire safety equipment and components.",
       icon: "⚡",
-      image: imageSet[0]
+      image: imageSet[0],
     },
     {
       name: "Gas Cutting Set",
@@ -36,8 +35,7 @@ const Equipment = () => {
       description:
         "Industrial-grade gas cutting sets for precise metal cutting operations in fire equipment manufacturing.",
       icon: "🔥",
-      image:
-        imageSet[1],
+      image: imageSet[1],
     },
     {
       name: "Gas Welding Set",
@@ -46,8 +44,7 @@ const Equipment = () => {
       description:
         "Gas welding equipment for specialized welding applications requiring controlled heat input.",
       icon: "🔥",
-      image:
-       imageSet[2],
+      image: imageSet[2],
     },
     {
       name: "Chain Pulley Block (2,5 Ton)",
@@ -56,8 +53,7 @@ const Equipment = () => {
       description:
         "2,5-ton capacity chain pulley blocks for safe lifting and positioning of heavy components during installation.",
       icon: "⛓️",
-      image:
-       imageSet[3],
+      image: imageSet[3],
     },
     {
       name: "M.S. Pipe Cutting Machine",
@@ -66,8 +62,7 @@ const Equipment = () => {
       description:
         "Specialized pipe cutting machines for precise cutting of mild steel pipes used in fire hydrant and sprinkler systems.",
       icon: "⚙️",
-      image:
-        imageSet[4],
+      image: imageSet[4],
     },
     {
       name: "Angle Grinder",
@@ -76,8 +71,7 @@ const Equipment = () => {
       description:
         "Versatile angle grinders for cutting, grinding and polishing metal components of fire safety systems.",
       icon: "🔄",
-      image:
-        imageSet[5],
+      image: imageSet[5],
     },
     {
       name: "Straight Grinder",
@@ -86,8 +80,7 @@ const Equipment = () => {
       description:
         "Straight grinders for precision grinding operations in tight spaces and detailed work.",
       icon: "🔄",
-      image:
-        imageSet[6],
+      image: imageSet[6],
     },
     {
       name: "Drill Machine (Hammer)",
@@ -96,8 +89,7 @@ const Equipment = () => {
       description:
         "Powerful hammer drill machines for concrete drilling during installation of fire safety systems.",
       icon: "🔨",
-      image:
-        imageSet[7],
+      image: imageSet[7],
     },
     {
       name: "Pistol Drill Machine",
@@ -106,8 +98,7 @@ const Equipment = () => {
       description:
         "Compact pistol-grip drill machines for precision drilling work in confined spaces.",
       icon: "🔨",
-      image:
-        imageSet[8],
+      image: imageSet[8],
     },
     {
       name: "Hydraulic Pump",
@@ -116,8 +107,7 @@ const Equipment = () => {
       description:
         "High-pressure hydraulic pumps for testing and commissioning of fire safety equipment.",
       icon: "💧",
-      image:
-       imageSet[9],
+      image: imageSet[9],
     },
   ];
 
@@ -381,10 +371,20 @@ const Equipment = () => {
       <header style={headerStyle}>
         <h1 style={titleStyle}>Our Technical Capabilities</h1>
         <p style={subtitleStyle}>
-          Krishna Fire Systems is equipped with state-of-the-art machinery and
-          tools to provide the highest quality fire safety solutions. Our
-          comprehensive equipment inventory enables us to handle all aspects of
-          installation, maintenance, and servicing.
+          Krishna Fire
+          <span
+            style={{
+              fontSize: "0.8em",
+              verticalAlign: "super",
+              marginLeft: "1px",
+            }}
+          >
+            ®
+          </span>{" "}
+          is equipped with state-of-the-art machinery and tools to provide the
+          highest quality fire safety solutions. Our comprehensive equipment
+          inventory enables us to handle all aspects of installation,
+          maintenance, and servicing.
         </p>
       </header>
 
@@ -436,15 +436,17 @@ const Equipment = () => {
           <div
             key={index}
             style={{
-              ...equipmentCardStyle,  
+              ...equipmentCardStyle,
               transform: "none", // Initial state
             }}
           >
-           <img
-            src={item.image.primary? item.image.primary : item.image.secondary}
-            alt={item.name}
-            style={equipmentImageStyle}
-          />
+            <img
+              src={
+                item.image.primary ? item.image.primary : item.image.secondary
+              }
+              alt={item.name}
+              style={equipmentImageStyle}
+            />
             <div style={equipmentInfoStyle}>
               <div style={iconContainerStyle}>{item.icon}</div>
               <div style={equipmentHeaderStyle}>

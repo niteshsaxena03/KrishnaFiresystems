@@ -4,8 +4,7 @@ import { useMobile } from "../hooks/useMobile";
 import { useState, useEffect } from "react";
 
 const Home = () => {
-      
-const [bgImage, setBgImage] = useState(
+  const [bgImage, setBgImage] = useState(
     "https://res.cloudinary.com/dhcodkhrw/image/upload/v1749029004/Home_g1dstg.jpg"
   );
 
@@ -19,7 +18,6 @@ const [bgImage, setBgImage] = useState(
       );
     };
   }, []);
-
 
   const isMobile = useMobile();
 
@@ -144,7 +142,9 @@ const [bgImage, setBgImage] = useState(
       <section style={heroSectionStyle}>
         <div style={overlayStyle}></div>
         <div style={heroContentStyle}>
-          <h1 style={heroTitleStyle}>KRISHNA FIRE SYSTEMS</h1>
+          <h1 style={heroTitleStyle}>
+            Krishna Firesystems Pvt.Ltd.
+          </h1>
           <p style={heroSubtitleStyle}>
             Leading Provider of Fire Protection Solutions Since 1995
           </p>
@@ -155,13 +155,33 @@ const [bgImage, setBgImage] = useState(
       </section>
 
       <section style={sectionStyle}>
-        <h2 style={sectionTitleStyle}>Welcome to Krishna Fire Systems</h2>
+        <h2 style={sectionTitleStyle}>
+          Welcome to Krishna Fire
+          <span
+            style={{
+              fontSize: "0.6em",
+              verticalAlign: "super",
+              marginLeft: "2px",
+            }}
+          >
+            ®
+          </span>
+        </h2>
         <p style={introTextStyle}>
-          Established in 1995, Krishna Fire Systems Pvt. Ltd. has emerged as a
-          leader in the fire protection industry. With nearly three decades of
-          experience, we specialize in delivering cutting-edge fire-fighting
-          systems and safety solutions tailored to meet the diverse needs of our
-          clients.
+          Established in 1995, Krishna Fire
+          <span
+            style={{
+              fontSize: "0.8em",
+              verticalAlign: "super",
+              marginLeft: "1px",
+            }}
+          >
+            ®
+          </span>{" "}
+          has emerged as a leader in the fire protection industry. With nearly
+          three decades of experience, we specialize in delivering cutting-edge
+          fire-fighting systems and safety solutions tailored to meet the
+          diverse needs of our clients.
         </p>
 
         <div style={featuredServiceStyle}>

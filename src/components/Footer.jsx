@@ -71,7 +71,18 @@ const Footer = () => {
     <footer style={footerStyle}>
       <div style={footerContentStyle}>
         <div style={footerSectionStyle}>
-          <h3 style={footerTitleStyle}>KRISHNA FIRE SYSTEMS</h3>
+          <h3 style={footerTitleStyle}>
+            KRISHNA FIRE
+            <span
+              style={{
+                fontSize: "0.6em",
+                verticalAlign: "super",
+                marginLeft: "2px",
+              }}
+            >
+              ®
+            </span>
+          </h3>
           <p style={footerTextStyle}>
             Established in 1995, we are leaders in fire protection systems and
             safety solutions.
@@ -129,8 +140,17 @@ const Footer = () => {
 
       <div style={footerBottomStyle}>
         <p>
-          © {new Date().getFullYear()} Krishna Fire Systems Pvt. Ltd. All
-          Rights Reserved.
+          © {new Date().getFullYear()} Krishna Fire
+          <span
+            style={{
+              fontSize: "0.8em",
+              verticalAlign: "super",
+              marginLeft: "1px",
+            }}
+          >
+            ®
+          </span>
+          . All Rights Reserved.
         </p>
       </div>
     </footer>

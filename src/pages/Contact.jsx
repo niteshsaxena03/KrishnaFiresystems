@@ -2,13 +2,13 @@ import { useState } from "react";
 import { theme } from "../theme";
 import { useMobile } from "../hooks/useMobile";
 import emailjs from "@emailjs/browser";
-import { MapContainer, TileLayer, Marker, Popup  , Circle } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-// markers : 
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+// markers :
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -17,11 +17,9 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
-
-
 const Contact = () => {
   const isMobile = useMobile();
-  const position = [28.536802035038527, 77.22817935200763]; 
+  const position = [28.536802035038527, 77.22817935200763];
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,48 +38,48 @@ const Contact = () => {
   };
 
   const sendEmail = (formData) => {
-  // Prepare parameters to send to EmailJS
-  const templateParams = {
-    name: formData.name,
-    email: formData.email,
-    phone: formData.phone,
-    subject: formData.subject,
-    message: formData.message,
-  };
+    // Prepare parameters to send to EmailJS
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+    };
 
-  emailjs
-    .send(
-      "service_ru9c4u9",   
-      "template_ofuae3r", 
-      templateParams,
-      "5O2ipjpZs8QcmPHZB"      
-    )
-    .then(
-      (result) => {
-        console.log("Email successfully sent!", result.text);
-        setFormSubmitted(true);
-        // Reset form after success
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-          subject: "",
-        });
-      },
-      (error) => {
-        console.error("Email sending failed:", error.text);
-        alert("Failed to send message. Please try again later.");
-      }
-    );
-  }
+    emailjs
+      .send(
+        "service_ru9c4u9",
+        "template_ofuae3r",
+        templateParams,
+        "5O2ipjpZs8QcmPHZB"
+      )
+      .then(
+        (result) => {
+          console.log("Email successfully sent!", result.text);
+          setFormSubmitted(true);
+          // Reset form after success
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+            subject: "",
+          });
+        },
+        (error) => {
+          console.error("Email sending failed:", error.text);
+          alert("Failed to send message. Please try again later.");
+        }
+      );
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data submitted:", formData);
 
-    // Email Js Part : 
-    sendEmail(formData)
+    // Email Js Part :
+    sendEmail(formData);
 
     setFormSubmitted(true);
     // Reset form after submission
@@ -372,23 +370,33 @@ const Contact = () => {
             </div>
           </div>
           <div style={mapContainerStyle}>
-          <MapContainer center={position} zoom={14} style={{ height: '100%', width: '100%' }}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position}>
-              <Popup>
-                Krishna Fire Systems Office<br />Ansals Chamber I, Delhi
-              </Popup>
-            </Marker>
-            <Circle
+            <MapContainer
               center={position}
-              radius={200} 
-              pathOptions={{ fillOpacity: 0.2 }}
-            />
-          </MapContainer>
-        </div>
+              zoom={14}
+              style={{ height: "100%", width: "100%" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={position}>
+                <Popup>
+                  Krishna Fire
+                  <span style={{ fontSize: "0.7em", verticalAlign: "super" }}>
+                    ®
+                  </span>{" "}
+                  Office
+                  <br />
+                  Ansals Chamber I, Delhi
+                </Popup>
+              </Marker>
+              <Circle
+                center={position}
+                radius={200}
+                pathOptions={{ fillOpacity: 0.2 }}
+              />
+            </MapContainer>
+          </div>
         </div>
       </div>
     </div>

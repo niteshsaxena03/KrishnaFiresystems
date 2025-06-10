@@ -19,9 +19,10 @@ const Clients = () => {
   const clients = [
     {
       name: "Lumax Industries Ltd.",
-      location: "Plant-I, Pant Nagar, IP-2, Salempur, Haridwar, Sanand, Gujarat (Ahmadabad), Bawal, Rewari (Haryana)",
+      location:
+        "Plant-I, Pant Nagar, IP-2, Salempur, Haridwar, Sanand, Gujarat (Ahmadabad), Bawal, Rewari (Haryana)",
       category: "industrial",
-      logo: '/lumax.png' ,
+      logo: "/lumax.png",
       logoBackground: "#ffff",
     },
     {
@@ -49,7 +50,7 @@ const Clients = () => {
       name: "Fortis Hospital",
       location: "Vasant Kunj, New Delhi",
       category: "commercial",
-      logo: "/fortis.png", 
+      logo: "/fortis.png",
       logoBackground: "#ffff",
     },
     {
@@ -319,9 +320,19 @@ const Clients = () => {
       <header style={headerStyle}>
         <h1 style={titleStyle}>Our Clients</h1>
         <p style={subtitleStyle}>
-          Over the years, Krishna Fire Systems has earned the trust of numerous
-          prestigious clients across various sectors. Our commitment to
-          excellence has made us the preferred choice for fire safety solutions.
+          Over the years, Krishna Fire
+          <span
+            style={{
+              fontSize: "0.8em",
+              verticalAlign: "super",
+              marginLeft: "1px",
+            }}
+          >
+            ®
+          </span>{" "}
+          has earned the trust of numerous prestigious clients across various
+          sectors. Our commitment to excellence has made us the preferred choice
+          for fire safety solutions.
         </p>
       </header>
 

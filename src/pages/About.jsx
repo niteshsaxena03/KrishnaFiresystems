@@ -108,7 +108,18 @@ const About = () => {
     <div>
       <section style={sectionStyle}>
         <div style={containerStyle}>
-          <h1 style={headingStyle}>About Krishna Fire Systems</h1>
+          <h1 style={headingStyle}>
+            About Krishna Fire
+            <span
+              style={{
+                fontSize: "0.6em",
+                verticalAlign: "super",
+                marginLeft: "2px",
+              }}
+            >
+              ®
+            </span>
+          </h1>
 
           <div style={highlightBoxStyle}>
             <div style={statBoxStyle}>
@@ -128,11 +139,20 @@ const About = () => {
           <div style={overviewSectionStyle}>
             <h2 style={subHeadingStyle}>Company Overview</h2>
             <p style={paragraphStyle}>
-              Established in 1995 and headquartered in Delhi, Krishna Fire®
-              Systems Pvt. Ltd. has emerged as a leader in the fire protection
-              industry. With nearly three decades of experience, we specialize
-              in delivering cutting-edge fire-fighting systems and safety
-              solutions tailored to meet the diverse needs of our clients.
+              Established in 1995 and headquartered in Delhi, Krishna Fire
+              <span
+                style={{
+                  fontSize: "0.8em",
+                  verticalAlign: "super",
+                  marginLeft: "1px",
+                }}
+              >
+                ®
+              </span>{" "}
+              has emerged as a leader in the fire protection industry. With
+              nearly three decades of experience, we specialize in delivering
+              cutting-edge fire-fighting systems and safety solutions tailored
+              to meet the diverse needs of our clients.
             </p>
             <p style={paragraphStyle}>
               As an ISO 9001:2000 certified company, our commitment to

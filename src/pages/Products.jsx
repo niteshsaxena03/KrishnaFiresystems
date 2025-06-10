@@ -26,7 +26,7 @@ const Products = () => {
       category: "fire-extinguishers",
       description:
         "ISI-marked CO2 fire extinguishers for electrical fires, available in various capacities.",
-      image: imageSet[0] ,
+      image: imageSet[0],
       features: [
         "ISI Marked",
         "Pressure Tested",
@@ -41,7 +41,7 @@ const Products = () => {
       category: "alarm-systems",
       description:
         "Microprocessor-based addressable fire alarm control panel with multi-zone capabilities.",
-      image: imageSet[1] ,
+      image: imageSet[1],
       features: [
         "Addressable Technology",
         "LCD Display",
@@ -56,7 +56,7 @@ const Products = () => {
       category: "hydrant-systems",
       description:
         "Single outlet landing valve for fire hydrant systems, manufactured to IS standards.",
-      image: imageSet[2] ,
+      image: imageSet[2],
       features: [
         "IS:5290 Compliant",
         "Working Pressure 15 kg/cm²",
@@ -71,7 +71,7 @@ const Products = () => {
       category: "suppression-systems",
       description:
         "Clean agent fire suppression system ideal for server rooms and sensitive equipment areas.",
-      image:  imageSet[3] ,
+      image: imageSet[3],
       features: [
         "Environmentally Friendly",
         "Zero Ozone Depletion",
@@ -86,7 +86,7 @@ const Products = () => {
       category: "hydrant-systems",
       description:
         "Swing-type fire hose reel with 30m hose, compliant with IS:884 standards.",
-      image: imageSet[4] ,
+      image: imageSet[4],
       features: [
         "IS:884 Certified",
         "30m Hose Length",
@@ -101,7 +101,7 @@ const Products = () => {
       category: "alarm-systems",
       description:
         "Photoelectric smoke detector with advanced false alarm prevention technology.",
-      image:  imageSet[5] ,
+      image: imageSet[5],
       features: [
         "Dual Sensor Technology",
         "Early Warning",
@@ -116,7 +116,7 @@ const Products = () => {
       category: "safety-equipment",
       description:
         "High-temperature resistant safety helmet for firefighting personnel.",
-      image:  imageSet[6] ,
+      image: imageSet[6],
       features: [
         "Heat Resistant",
         "Impact Protection",
@@ -131,7 +131,7 @@ const Products = () => {
       category: "suppression-systems",
       description:
         "Quick response automatic sprinkler head for ceiling installation in commercial buildings.",
-      image:  imageSet[7] ,
+      image: imageSet[7],
       features: [
         "Various Temperature Ratings",
         "Decorative Finish Options",
@@ -311,9 +311,19 @@ const Products = () => {
       <header style={headerStyle}>
         <h1 style={titleStyle}>Our Products</h1>
         <p style={subtitleStyle}>
-          Krishna Fire Systems offers a comprehensive range of high-quality fire
-          safety products, including both Indian and imported brands, to meet
-          all your fire protection needs.
+          Krishna Fire
+          <span
+            style={{
+              fontSize: "0.8em",
+              verticalAlign: "super",
+              marginLeft: "1px",
+            }}
+          >
+            ®
+          </span>{" "}
+          offers a comprehensive range of high-quality fire safety products,
+          including both Indian and imported brands, to meet all your fire
+          protection needs.
         </p>
       </header>
 
@@ -346,15 +356,15 @@ const Products = () => {
             }}
           >
             <div style={productImageContainerStyle}>
-             <img
-              src={product.image.primary}
-              alt={product.name}
-              style={productImageStyle}
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = product.image.secondary;
-              }}
-            />
+              <img
+                src={product.image.primary}
+                alt={product.name}
+                style={productImageStyle}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = product.image.secondary;
+                }}
+              />
             </div>
             <div style={productInfoStyle}>
               <h3 style={productNameStyle}>{product.name}</h3>
