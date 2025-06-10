@@ -50,7 +50,7 @@ const Home = () => {
   const heroContentStyle = {
     position: "relative",
     zIndex: 1,
-    maxWidth: "800px",
+    //maxWidth: "800px",
     padding: theme.spacing.xl,
   };
 
@@ -143,7 +143,17 @@ const Home = () => {
         <div style={overlayStyle}></div>
         <div style={heroContentStyle}>
           <h1 style={heroTitleStyle}>
-            Krishna Firesystems Pvt.Ltd.
+            KRISHNA FIRE
+            <span
+              style={{
+                fontSize: "0.5em",
+                verticalAlign: "super",
+                marginLeft: "2px",
+              }}
+            >
+              ®
+            </span>{" "}
+            SYSTEMS PVT.LTD.
           </h1>
           <p style={heroSubtitleStyle}>
             Leading Provider of Fire Protection Solutions Since 1995

@@ -123,14 +123,12 @@ const Footer = () => {
           <h3 style={footerTitleStyle}>Contact Us</h3>
           <p style={footerTextStyle}>
             <strong>Registered Office:</strong> B-305, 3rd Floor, Ansal
-            Chamber-1, Bhikaji Cama Place, New Delhi – 110066
+            Chamber-1, Bhikaji Cama Place, New Delhi – 110066,{" "}
+            <strong>Phone:</strong> 011-40582491
           </p>
           <p style={footerTextStyle}>
             <strong>Works:</strong> S - 321, Chirag Delhi, Near Bhagat Singh
-            College, New Delhi – 110017
-          </p>
-          <p style={footerTextStyle}>
-            <strong>Phone:</strong> 011-40582491, 011-45725370
+            College, New Delhi – 110017, <strong>Phone:</strong> 011-45725370
           </p>
           <p style={footerTextStyle}>
             <strong>Email:</strong> delhi@krishnafiresystems.com
