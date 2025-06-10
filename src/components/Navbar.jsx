@@ -30,7 +30,7 @@ const Navbar = () => {
     { path: "/services", label: "Services" },
     { path: "/products", label: "Products" },
     { path: "/clients", label: "Clients" },
-    { path: "/equipment", label: "Equipment" },
+    { path: "/equipment", label: "Tools & Equipments" },
     { path: "/contact", label: "Contact" },
   ];
 
@@ -199,8 +199,11 @@ const Navbar = () => {
             <span
               style={{
                 fontSize: "0.6em",
-                verticalAlign: "super",
-                marginLeft: "2px",
+                verticalAlign: "top",
+                marginLeft: "1px",
+                lineHeight: "1",
+                position: "relative",
+                top: "-0.3em",
               }}
             >
               ®
