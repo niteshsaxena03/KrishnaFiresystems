@@ -452,7 +452,7 @@ const Equipment = () => {
         />
         <div style={contactInfoStyle}>
           <h3 style={contactNameStyle}>Udai Thakur</h3>
-          <p style={contactRoleStyle}>Technical Director</p>
+          <p style={contactRoleStyle}>Managing Director</p>
           <p style={contactTextStyle}>
             "We assure you about our best services and products and look forward
             to serving your esteemed organization with the highest standards of
