@@ -356,7 +356,9 @@ const Contact = () => {
               <div style={infoTextStyle}>
                 <strong>Phone:</strong>
                 <br />
-                011-40582491, 011-45725370
+                <strong>Registered Office</strong>: 011-40582491
+                <br />
+                <strong>Works</strong>: 011-45725370
               </div>
             </div>
 
