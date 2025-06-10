@@ -210,6 +210,59 @@ const Contact = () => {
     overflow: "hidden",
   };
 
+  const directorSectionStyle = {
+    background:
+      "linear-gradient(45deg, rgba(11, 47, 92, 0.05) 0%, rgba(163, 0, 0, 0.05) 100%)",
+    padding: theme.spacing.xl,
+    borderRadius: theme.borderRadius.md,
+    marginTop: theme.spacing.xxl,
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    alignItems: "center",
+    gap: theme.spacing.xl,
+  };
+
+  const directorImageStyle = {
+    width: isMobile ? "80px" : "120px",
+    height: isMobile ? "80px" : "120px",
+    borderRadius: "50%",
+    objectFit: "cover",
+    border: `3px solid ${theme.colors.primary}`,
+  };
+
+  const directorInfoStyle = {
+    flex: 1,
+  };
+
+  const directorTextStyle = {
+    fontSize: theme.typography.fontSize.lg,
+    lineHeight: "1.6",
+    marginBottom: theme.spacing.md,
+    fontStyle: "italic",
+  };
+
+  const directorNameStyle = {
+    fontSize: theme.typography.fontSize.xl,
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.primary,
+    marginBottom: theme.spacing.sm,
+  };
+
+  const directorRoleStyle = {
+    fontSize: theme.typography.fontSize.md,
+    color: theme.colors.gray,
+    marginBottom: theme.spacing.md,
+  };
+
+  const directorPhoneStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: theme.spacing.sm,
+    fontSize: theme.typography.fontSize.lg,
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.secondary,
+  };
+
   const successMessageStyle = {
     padding: theme.spacing.lg,
     backgroundColor: "rgba(75, 181, 67, 0.1)",
@@ -398,6 +451,27 @@ const Contact = () => {
                 pathOptions={{ fillOpacity: 0.2 }}
               />
             </MapContainer>
+          </div>
+        </div>
+      </div>
+
+      {/* Managing Director Section */}
+      <div style={directorSectionStyle}>
+        <img
+          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80"
+          alt="Udai Thakur"
+          style={directorImageStyle}
+        />
+        <div style={directorInfoStyle}>
+          <h3 style={directorNameStyle}>Udai Thakur</h3>
+          <p style={directorRoleStyle}>Managing Director</p>
+          <p style={directorTextStyle}>
+            "We assure you about our best services and products and look forward
+            to serving your esteemed organization with the highest standards of
+            quality and reliability."
+          </p>
+          <div style={directorPhoneStyle}>
+            <span style={{ fontSize: "20px" }}>📱</span> 98101-39453
           </div>
         </div>
       </div>

@@ -314,58 +314,6 @@ const Equipment = () => {
     marginBottom: 0,
   };
 
-  const contactSectionStyle = {
-    background:
-      "linear-gradient(45deg, rgba(11, 47, 92, 0.05) 0%, rgba(163, 0, 0, 0.05) 100%)",
-    padding: theme.spacing.xl,
-    borderRadius: theme.borderRadius.md,
-    marginTop: theme.spacing.xxl,
-    display: "flex",
-    flexDirection: isMobile ? "column" : "row",
-    alignItems: "center",
-    gap: theme.spacing.xl,
-  };
-
-  const contactImageStyle = {
-    width: isMobile ? "80px" : "120px",
-    height: isMobile ? "80px" : "120px",
-    borderRadius: "50%",
-    objectFit: "cover",
-    border: `3px solid ${theme.colors.primary}`,
-  };
-
-  const contactInfoStyle = {
-    flex: 1,
-  };
-
-  const contactTextStyle = {
-    fontSize: theme.typography.fontSize.lg,
-    lineHeight: "1.6",
-    marginBottom: theme.spacing.md,
-  };
-
-  const contactNameStyle = {
-    fontSize: theme.typography.fontSize.xl,
-    fontWeight: theme.typography.fontWeight.bold,
-    color: theme.colors.primary,
-    marginBottom: theme.spacing.sm,
-  };
-
-  const contactRoleStyle = {
-    fontSize: theme.typography.fontSize.md,
-    color: theme.colors.gray,
-    marginBottom: theme.spacing.md,
-  };
-
-  const contactPhoneStyle = {
-    display: "flex",
-    alignItems: "center",
-    gap: theme.spacing.sm,
-    fontSize: theme.typography.fontSize.lg,
-    fontWeight: theme.typography.fontWeight.bold,
-    color: theme.colors.secondary,
-  };
-
   return (
     <div style={containerStyle}>
       <header style={headerStyle}>
@@ -442,26 +390,6 @@ const Equipment = () => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div style={contactSectionStyle}>
-        <img
-          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80"
-          alt="Udai Thakur"
-          style={contactImageStyle}
-        />
-        <div style={contactInfoStyle}>
-          <h3 style={contactNameStyle}>Udai Thakur</h3>
-          <p style={contactRoleStyle}>Managing Director</p>
-          <p style={contactTextStyle}>
-            "We assure you about our best services and products and look forward
-            to serving your esteemed organization with the highest standards of
-            quality and reliability."
-          </p>
-          <div style={contactPhoneStyle}>
-            <span style={{ fontSize: "20px" }}>📱</span> 98101-39453
-          </div>
-        </div>
       </div>
     </div>
   );
