@@ -40,13 +40,6 @@ const Clients = () => {
       logoBackground: "#ffff",
     },
     {
-      name: "The Metropolitan Mall",
-      location: "MGF – Jaipur",
-      category: "commercial",
-      logo: "/MGF.jpg",
-      logoBackground: "#ffff",
-    },
-    {
       name: "Fortis Hospital",
       location: "Vasant Kunj, New Delhi",
       category: "commercial",

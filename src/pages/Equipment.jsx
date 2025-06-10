@@ -388,21 +388,6 @@ const Equipment = () => {
         </p>
       </header>
 
-      <div style={statsContainerStyle}>
-        <div style={statCardStyle}>
-          <div style={statNumberStyle}>11</div>
-          <div style={statLabelStyle}>Types of Equipment</div>
-        </div>
-        <div style={statCardStyle}>
-          <div style={statNumberStyle}>78</div>
-          <div style={statLabelStyle}>Total Equipment Units</div>
-        </div>
-        <div style={statCardStyle}>
-          <div style={statNumberStyle}>30+</div>
-          <div style={statLabelStyle}>Years of Experience</div>
-        </div>
-      </div>
-
       <div style={introSectionStyle}>
         <div style={introPatternsStyle}></div>
         <div style={introContentStyle}>

@@ -327,13 +327,6 @@ const Products = () => {
         </p>
       </header>
 
-      <div style={infoBoxStyle}>
-        <p style={infoBoxTextStyle}>
-          <strong>Deals in:</strong> Various Indian & Imported brands with best
-          quality products and services
-        </p>
-      </div>
-
       <div style={filterContainerStyle}>
         {categories.map((category) => (
           <button
