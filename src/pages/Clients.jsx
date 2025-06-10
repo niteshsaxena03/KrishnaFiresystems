@@ -315,8 +315,128 @@ const Clients = () => {
     marginBottom: 0,
   };
 
+  // Slider styles
+  const sliderContainerStyle = {
+    width: "100%",
+    overflow: "hidden",
+    padding: `${theme.spacing.xl} 0`,
+    background: "linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%)",
+    borderRadius: theme.borderRadius.md,
+    marginBottom: theme.spacing.xxl,
+    position: "relative",
+  };
+
+  const sliderTrackStyle = {
+    display: "flex",
+    animation: "slideClockwise 30s linear infinite",
+    gap: theme.spacing.xl,
+  };
+
+  const logoSlideStyle = {
+    minWidth: "150px",
+    height: "100px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.borderRadius.sm,
+    boxShadow: theme.boxShadow.sm,
+    padding: theme.spacing.md,
+    transition: "transform 0.3s ease",
+  };
+
+  const logoImageStyle = {
+    maxWidth: "120px",
+    maxHeight: "80px",
+    objectFit: "contain",
+    filter: "grayscale(20%)",
+    transition: "filter 0.3s ease",
+  };
+
+  const clientListStyle = {
+    marginTop: theme.spacing.xxl,
+  };
+
+  const listTitleStyle = {
+    fontSize: theme.typography.fontSize.xl,
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.primary,
+    marginBottom: theme.spacing.xl,
+    textAlign: "center",
+  };
+
+  const categorySectionStyle = {
+    marginBottom: theme.spacing.xxl,
+  };
+
+  const categoryTitleStyle = {
+    fontSize: theme.typography.fontSize.lg,
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.secondary,
+    marginBottom: theme.spacing.lg,
+    textTransform: "uppercase",
+    letterSpacing: "1px",
+  };
+
+  const clientListGridStyle = {
+    display: "grid",
+    gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
+    gap: theme.spacing.md,
+  };
+
+  const clientListItemStyle = {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing.md,
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.borderRadius.sm,
+    boxShadow: theme.boxShadow.sm,
+    borderLeft: `4px solid ${theme.colors.primary}`,
+  };
+
+  const clientListNameStyle = {
+    fontSize: theme.typography.fontSize.md,
+    fontWeight: theme.typography.fontWeight.medium,
+    color: theme.colors.primary,
+    marginBottom: theme.spacing.xs,
+  };
+
+  const clientListLocationStyle = {
+    fontSize: theme.typography.fontSize.sm,
+    color: theme.colors.gray,
+  };
+
+  // Group clients by category for the list
+  const clientsByCategory = categories.slice(1).reduce((acc, category) => {
+    acc[category.id] = clients.filter(
+      (client) => client.category === category.id
+    );
+    return acc;
+  }, {});
+
   return (
     <div style={containerStyle}>
+      <style>
+        {`
+          @keyframes slideClockwise {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${clients.length * 170}px);
+            }
+          }
+          
+          .logo-slide:hover {
+            transform: scale(1.05);
+          }
+          
+          .logo-slide:hover img {
+            filter: grayscale(0%);
+          }
+        `}
+      </style>
+
       <header style={headerStyle}>
         <h1 style={titleStyle}>Our Clients</h1>
         <p style={subtitleStyle}>
@@ -338,51 +458,57 @@ const Clients = () => {
 
       <div style={introBoxStyle}>
         <p style={introTextStyle}>
-          <strong>SOME IMPORTANT CLIENTS AND PROJECTS EXECUTED</strong>
+          <strong>TRUSTED BY LEADING ORGANIZATIONS</strong>
           <br />
           We have lots of other customers who are using our fire and security
           equipment with full satisfaction.
         </p>
       </div>
 
-      <div style={categoriesContainerStyle}>
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            style={categoryButtonStyle(activeCategory === category.id)}
-            onClick={() => setActiveCategory(category.id)}
-          >
-            {category.name}
-          </button>
-        ))}
+      {/* Animated Logo Slider */}
+      <div style={sliderContainerStyle}>
+        <div style={sliderTrackStyle}>
+          {/* Double the logos for seamless loop */}
+          {[...clients, ...clients].map((client, index) => (
+            <div key={index} className="logo-slide" style={logoSlideStyle}>
+              <img
+                src={client.logo}
+                alt={`${client.name} logo`}
+                style={logoImageStyle}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div style={clientsGridStyle}>
-        {filteredClients.map((client, index) => (
-          <div
-            key={index}
-            style={{
-              ...clientCardStyle,
-              transform: "none", // Initial state
-            }}
-          >
-            <div style={clientLogoContainerStyle(client.logoBackground)}>
-              <img src={client.logo} alt={`${client.name} logo`} />
-            </div>
-            <div style={clientInfoStyle}>
-              <div>
-                <h3 style={clientNameStyle}>{client.name}</h3>
-                <p style={clientLocationStyle}>
-                  <span style={locationIconStyle}>📍</span> {client.location}
-                </p>
+      {/* Client List by Category */}
+      <div style={clientListStyle}>
+        <h2 style={listTitleStyle}>Complete Client Directory</h2>
+
+        {Object.entries(clientsByCategory).map(
+          ([categoryId, categoryClients]) => {
+            const categoryInfo = categories.find(
+              (cat) => cat.id === categoryId
+            );
+            return (
+              <div key={categoryId} style={categorySectionStyle}>
+                <h3 style={categoryTitleStyle}>{categoryInfo?.name} Sector</h3>
+                <div style={clientListGridStyle}>
+                  {categoryClients.map((client, index) => (
+                    <div key={index} style={clientListItemStyle}>
+                      <div>
+                        <div style={clientListNameStyle}>{client.name}</div>
+                        <div style={clientListLocationStyle}>
+                          📍 {client.location}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <span style={categoryBadgeStyle(client.category)}>
-                {categories.find((cat) => cat.id === client.category)?.name ||
-                  client.category}
-              </span>
-            </div>
-          </div>
-        ))}
+            );
+          }
+        )}
       </div>
     </div>
   );
