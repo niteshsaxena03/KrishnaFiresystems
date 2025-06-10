@@ -49,13 +49,6 @@ const Services = () => {
     },
     {
       id: 7,
-      title: "Security Systems",
-      description:
-        "Advanced solutions including access control systems, CCTV, video door phones, and electronic safes to enhance overall safety measures.",
-      icon: "📹",
-    },
-    {
-      id: 8,
       title: "Personal Protective Equipment",
       description:
         "Supply of PPE and related safety gear for fire and general industrial safety requirements.",
@@ -89,82 +82,72 @@ const Services = () => {
     lineHeight: "1.6",
   };
 
-  const servicesGridStyle = {
-    display: "grid",
-    gridTemplateColumns: isMobile
-      ? "1fr"
-      : "repeat(auto-fill, minmax(300px, 1fr))",
-    gap: theme.spacing.xl,
+  // Slider styles
+  const sliderContainerStyle = {
+    width: "100%",
+    overflow: "hidden",
+    padding: `${theme.spacing.xl} 0`,
+    background: "linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%)",
+    borderRadius: theme.borderRadius.md,
+    marginBottom: theme.spacing.xxl,
+    position: "relative",
   };
 
-  const serviceCardStyle = {
-    background: theme.colors.white,
-    border: `1px solid ${theme.colors.lightGray}`,
-    borderRadius: theme.borderRadius.md,
-    padding: theme.spacing.xl,
-    boxShadow: theme.boxShadow.sm,
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    cursor: "pointer",
+  const sliderTrackStyle = {
+    display: "flex",
+    animation: "slideServices 15s linear infinite",
+    gap: theme.spacing.lg,
+  };
+
+  const serviceSlideStyle = {
+    minWidth: "200px",
+    height: "150px",
     display: "flex",
     flexDirection: "column",
-    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: theme.colors.white,
+    borderRadius: theme.borderRadius.md,
+    boxShadow: theme.boxShadow.sm,
+    padding: theme.spacing.lg,
+    transition: "transform 0.2s ease, box-shadow 0.3s ease",
+    border: `2px solid ${theme.colors.lightGray}`,
   };
 
   const serviceIconStyle = {
-    fontSize: "3rem",
-    marginBottom: theme.spacing.md,
+    fontSize: "2.5rem",
+    marginBottom: theme.spacing.sm,
     color: theme.colors.primary,
   };
 
   const serviceTitleStyle = {
-    fontSize: theme.typography.fontSize.lg,
-    fontWeight: theme.typography.fontWeight.bold,
-    marginBottom: theme.spacing.md,
-    color: theme.colors.primary,
-  };
-
-  const serviceDescriptionStyle = {
     fontSize: theme.typography.fontSize.md,
-    color: theme.colors.gray,
-    lineHeight: "1.6",
-    flex: 1,
-  };
-
-  const serviceCardHoverStyle = {
-    transform: "translateY(-5px)",
-    boxShadow: theme.boxShadow.md,
-  };
-
-  // Enhanced card style with hover effect
-  const getCardStyle = (index) => {
-    const isEven = index % 2 === 0;
-
-    return {
-      ...serviceCardStyle,
-      background: isEven ? theme.colors.white : theme.gradients.blueToDarkBlue,
-      color: isEven ? theme.colors.dark : theme.colors.white,
-      ":hover": serviceCardHoverStyle,
-    };
-  };
-
-  const getServiceTitleStyle = (index) => {
-    const isEven = index % 2 === 0;
-    return {
-      ...serviceTitleStyle,
-      color: isEven ? theme.colors.primary : theme.colors.white,
-    };
-  };
-
-  const getServiceDescriptionStyle = (index) => {
-    const isEven = index % 2 === 0;
-    return {
-      ...serviceDescriptionStyle,
-      color: isEven ? theme.colors.gray : theme.colors.lightGray,
-    };
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.primary,
+    textAlign: "center",
+    lineHeight: "1.3",
   };
 
   return (
     <div style={containerStyle}>
+      <style>
+        {`
+          @keyframes slideServices {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${servicesList.length * 220}px);
+            }
+          }
+          
+          .service-slide:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          }
+        `}
+      </style>
+
       <header style={headerStyle}>
         <h1 style={titleStyle}>Our Services</h1>
         <p style={subtitleStyle}>
@@ -174,25 +157,21 @@ const Services = () => {
         </p>
       </header>
 
-      <div style={servicesGridStyle}>
-        {servicesList.map((service, index) => (
-          <div
-            key={service.id}
-            style={{
-              ...getCardStyle(index),
-              background:
-                index % 2 === 0
-                  ? theme.colors.white
-                  : theme.gradients.blueToDarkBlue,
-            }}
-          >
-            <div style={serviceIconStyle}>{service.icon}</div>
-            <h3 style={getServiceTitleStyle(index)}>{service.title}</h3>
-            <p style={getServiceDescriptionStyle(index)}>
-              {service.description}
-            </p>
-          </div>
-        ))}
+      {/* Animated Services Slider */}
+      <div style={sliderContainerStyle}>
+        <div style={sliderTrackStyle}>
+          {/* Double the services for seamless loop */}
+          {[...servicesList, ...servicesList].map((service, index) => (
+            <div
+              key={index}
+              className="service-slide"
+              style={serviceSlideStyle}
+            >
+              <div style={serviceIconStyle}>{service.icon}</div>
+              <h3 style={serviceTitleStyle}>{service.title}</h3>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
