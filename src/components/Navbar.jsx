@@ -61,7 +61,7 @@ const Navbar = () => {
     justifyContent: "space-between",
     alignItems: "center",
     height: "100%",
-    maxWidth: "1200px",
+    maxWidth: "100%",
     margin: "0 auto",
   };
 
@@ -125,26 +125,24 @@ const Navbar = () => {
   };
 
   const linkStyle = (isActive) => ({
-    color: isActive ? theme.colors.navHighlight : theme.colors.white,
-    textDecoration: "none",
-    padding: isMobile ? theme.spacing.md : `0 ${theme.spacing.lg}`,
-    margin: isMobile ? `${theme.spacing.xs} 0` : 0,
-    fontWeight: isActive
-      ? theme.typography.fontWeight.bold
-      : theme.typography.fontWeight.medium,
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-    height: isMobile ? "auto" : "100%",
-    transition: "color 0.2s ease, transform 0.2s ease",
-    textTransform: "uppercase",
-    fontSize: theme.typography.fontSize.sm,
-    letterSpacing: "1px",
-    transform: isActive && !isMobile ? "translateY(-2px)" : "none",
-    "&:hover": {
-      color: theme.colors.navHighlight,
-    },
-  });
+  color: isActive ? theme.colors.navHighlight : theme.colors.white,
+  textDecoration: "none",
+  padding: isMobile ? theme.spacing.md : `0 ${theme.spacing.lg}`,
+  margin: isMobile ? `${theme.spacing.xs} 0` : 0,
+  fontWeight: theme.typography.fontWeight.bold, // ← BOLDER FONT FOR ALL
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  height: isMobile ? "auto" : "100%",
+  transition: "color 0.2s ease, transform 0.2s ease",
+  textTransform: "uppercase",
+  fontSize: theme.typography.fontSize.sm,
+  letterSpacing: "1px",
+  transform: isActive && !isMobile ? "translateY(-2px)" : "none",
+  "&:hover": {
+    color: theme.colors.navHighlight,
+  },
+});
 
   // Active link indicator (visible on desktop only)
   const activeLinkIndicator = (isActive) => ({

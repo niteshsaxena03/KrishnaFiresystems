@@ -25,7 +25,6 @@ const Equipment = () => {
       category: "welding",
       description:
         "High-performance electric welding machines used for precision fabrication of fire safety equipment and components.",
-      icon: "⚡",
       image: imageSet[0],
     },
     {
@@ -34,7 +33,6 @@ const Equipment = () => {
       category: "cutting",
       description:
         "Industrial-grade gas cutting sets for precise metal cutting operations in fire equipment manufacturing.",
-      icon: "🔥",
       image: imageSet[1],
     },
     {
@@ -43,7 +41,6 @@ const Equipment = () => {
       category: "welding",
       description:
         "Gas welding equipment for specialized welding applications requiring controlled heat input.",
-      icon: "🔥",
       image: imageSet[2],
     },
     {
@@ -52,7 +49,6 @@ const Equipment = () => {
       category: "lifting",
       description:
         "2,5-ton capacity chain pulley blocks for safe lifting and positioning of heavy components during installation.",
-      icon: "⛓️",
       image: imageSet[3],
     },
     {
@@ -61,7 +57,6 @@ const Equipment = () => {
       category: "cutting",
       description:
         "Specialized pipe cutting machines for precise cutting of mild steel pipes used in fire hydrant and sprinkler systems.",
-      icon: "⚙️",
       image: imageSet[4],
     },
     {
@@ -70,7 +65,6 @@ const Equipment = () => {
       category: "cutting",
       description:
         "Versatile angle grinders for cutting, grinding and polishing metal components of fire safety systems.",
-      icon: "🔄",
       image: imageSet[5],
     },
     {
@@ -79,7 +73,6 @@ const Equipment = () => {
       category: "cutting",
       description:
         "Straight grinders for precision grinding operations in tight spaces and detailed work.",
-      icon: "🔄",
       image: imageSet[6],
     },
     {
@@ -88,7 +81,6 @@ const Equipment = () => {
       category: "drilling",
       description:
         "Powerful hammer drill machines for concrete drilling during installation of fire safety systems.",
-      icon: "🔨",
       image: imageSet[7],
     },
     {
@@ -97,7 +89,6 @@ const Equipment = () => {
       category: "drilling",
       description:
         "Compact pistol-grip drill machines for precision drilling work in confined spaces.",
-      icon: "🔨",
       image: imageSet[8],
     },
     {
@@ -106,7 +97,6 @@ const Equipment = () => {
       category: "other",
       description:
         "High-pressure hydraulic pumps for testing and commissioning of fire safety equipment.",
-      icon: "💧",
       image: imageSet[9],
     },
   ];
@@ -225,7 +215,7 @@ const Equipment = () => {
   const equipmentImageStyle = {
     width: "100%",
     height: "200px",
-    objectFit: "cover",
+    objectFit: "contain",
   };
 
   const equipmentInfoStyle = {
@@ -381,7 +371,6 @@ const Equipment = () => {
               style={equipmentImageStyle}
             />
             <div style={equipmentInfoStyle}>
-              <div style={iconContainerStyle}>{item.icon}</div>
               <div style={equipmentHeaderStyle}>
                 <h3 style={equipmentNameStyle}>{item.name}</h3>
                 <div style={equipmentQuantityBadgeStyle}>{item.quantity}</div>

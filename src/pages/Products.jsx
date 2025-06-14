@@ -226,7 +226,7 @@ const Products = () => {
   const productImageStyle = {
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    objectFit: "contain" ,
     transition: "transform 0.5s ease",
   };
 
@@ -349,15 +349,18 @@ const Products = () => {
             }}
           >
             <div style={productImageContainerStyle}>
-              <img
-                src={product.image.primary}
-                alt={product.name}
-                style={productImageStyle}
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = product.image.secondary;
-                }}
-              />
+            <img
+              src={product.image.primary}
+              alt={product.name}
+              style={{
+                ...productImageStyle,
+                objectFit: product.id === 4 ? "cover" : productImageStyle?.objectFit || "contain",
+              }}
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = product.image.secondary;
+              }}
+            />
             </div>
             <div style={productInfoStyle}>
               <h3 style={productNameStyle}>{product.name}</h3>

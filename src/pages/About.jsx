@@ -1,5 +1,7 @@
 import { theme } from "../theme";
 import { useMobile } from "../hooks/useMobile";
+import CountUp from "react-countup";
+
 
 const About = () => {
   const isMobile = useMobile();
@@ -26,7 +28,6 @@ const About = () => {
     fontWeight: theme.typography.fontWeight.bold,
     color: theme.colors.secondary,
     marginBottom: theme.spacing.md,
-    marginTop: theme.spacing.xl,
   };
 
   const paragraphStyle = {
@@ -122,19 +123,25 @@ const About = () => {
           </h1>
 
           <div style={highlightBoxStyle}>
-            <div style={statBoxStyle}>
-              <div style={statNumberStyle}>30+</div>
-              <div style={statTextStyle}>Years of Experience</div>
+          <div style={statBoxStyle}>
+            <div style={statNumberStyle}>
+              <CountUp start={0} end={30} duration={3.5} suffix="+" />
             </div>
-            <div style={statBoxStyle}>
-              <div style={statNumberStyle}>500+</div>
-              <div style={statTextStyle}>Projects Completed</div>
-            </div>
-            <div style={statBoxStyle}>
-              <div style={statNumberStyle}>250+</div>
-              <div style={statTextStyle}>Happy Clients</div>
-            </div>
+            <div style={statTextStyle}>Years of Experience</div>
           </div>
+          <div style={statBoxStyle}>
+            <div style={statNumberStyle}>
+              <CountUp start={0} end={500} duration={4} suffix="+" />
+            </div>
+            <div style={statTextStyle}>Projects Completed</div>
+          </div>
+          <div style={statBoxStyle}>
+            <div style={statNumberStyle}>
+              <CountUp start={0} end={250} duration={3.5} suffix="+" />
+            </div>
+            <div style={statTextStyle}>Happy Clients</div>
+          </div>
+        </div>
 
           <div style={overviewSectionStyle}>
             <h2 style={subHeadingStyle}>Company Overview</h2>

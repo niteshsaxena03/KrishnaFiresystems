@@ -10,49 +10,49 @@ const Services = () => {
       title: "Fire Hydrant Systems",
       description:
         "Design, installation, and maintenance of complete fire hydrant systems, incorporating hose reels, sprinklers, and fire alarm systems.",
-      icon: "🚿",
+      image: "fireHydrant.jpg",
     },
     {
       id: 2,
       title: "Gas-Based Fire Suppression",
       description:
         "Specialized in CO2, clean agent gases like FK-5-1-12/NOVEC-1230, and other advanced fire suppression solutions for critical areas.",
-      icon: "💨",
+      image: "gasBased.jpg",
     },
     {
       id: 3,
       title: "Foam Flooding Systems",
       description:
         "AFFF foam flooding, Deluge valve, Medium Velocity and High Velocity Water Spray (MVWS & HVWS) for liquid paint booth and more.",
-      icon: "🧯",
+      image: "foam.jpg",
     },
     {
       id: 4,
       title: "Fire Extinguishers",
       description:
         "Supply and maintenance of a wide range of ISI-marked and TAC-approved fire extinguishers, with professional refilling and repair services.",
-      icon: "🧯",
+      image: "/fireExt.png",
     },
     {
       id: 5,
       title: "High-Pressure Water Pumps",
       description:
         "Installation of diesel and electric motor-driven high-pressure water pump sets connected to fire pipelines.",
-      icon: "⚙️",
+      image: "hpwp.jpg",
     },
     {
       id: 6,
       title: "Annual Maintenance Contracts",
       description:
         "Comprehensive maintenance services for fire safety systems and extinguishers to ensure they remain fully functional and compliant.",
-      icon: "📋",
+      image: "amc.jpg",
     },
     {
       id: 7,
       title: "Personal Protective Equipment",
       description:
         "Supply of PPE and related safety gear for fire and general industrial safety requirements.",
-      icon: "🥽",
+      image: "ppe.jpg",
     },
   ];
 
@@ -87,11 +87,12 @@ const Services = () => {
     width: "100%",
     overflow: "hidden",
     padding: `${theme.spacing.xl} 0`,
-    background: "linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%)",
+    background: theme.colors.white, // changed to pure white
     borderRadius: theme.borderRadius.md,
     marginBottom: theme.spacing.xxl,
     position: "relative",
   };
+
 
   const sliderTrackStyle = {
     display: "flex",
@@ -100,24 +101,15 @@ const Services = () => {
   };
 
   const serviceSlideStyle = {
-    minWidth: "200px",
-    height: "150px",
+    minWidth: "300px",
+    height: "220px",
     display: "flex",
-    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: theme.colors.white,
     borderRadius: theme.borderRadius.md,
-    boxShadow: theme.boxShadow.sm,
-    padding: theme.spacing.lg,
-    transition: "transform 0.2s ease, box-shadow 0.3s ease",
-    border: `2px solid ${theme.colors.lightGray}`,
-  };
-
-  const serviceIconStyle = {
-    fontSize: "2.5rem",
-    marginBottom: theme.spacing.sm,
-    color: theme.colors.primary,
+    overflow: "hidden",
+    padding: 0,
   };
 
   const serviceTitleStyle = {
@@ -126,6 +118,7 @@ const Services = () => {
     color: theme.colors.primary,
     textAlign: "center",
     lineHeight: "1.3",
+    marginTop: theme.spacing.sm,
   };
 
   return (
@@ -162,15 +155,25 @@ const Services = () => {
         <div style={sliderTrackStyle}>
           {/* Double the services for seamless loop */}
           {[...servicesList, ...servicesList].map((service, index) => (
-            <div
-              key={index}
-              className="service-slide"
-              style={serviceSlideStyle}
-            >
-              <div style={serviceIconStyle}>{service.icon}</div>
-              <h3 style={serviceTitleStyle}>{service.title}</h3>
+          <div
+            key={index}
+            className="service-slide"
+            style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+          >
+            <div style={serviceSlideStyle}>
+              <img
+                src={service.image}
+                alt={service.title}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+              />
             </div>
-          ))}
+            <h3 style={serviceTitleStyle}>{service.title}</h3>
+          </div>
+        ))}
         </div>
       </div>
     </div>

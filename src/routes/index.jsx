@@ -7,9 +7,12 @@ import Products from "../pages/Products";
 import Clients from "../pages/Clients";
 import Equipment from "../pages/Equipment";
 import Contact from "../pages/Contact";
+import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes = () => {
   return (
+   <>
+    <ScrollToTop />
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
@@ -21,6 +24,7 @@ const AppRoutes = () => {
         <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
+   </>
   );
 };
 

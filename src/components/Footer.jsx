@@ -87,17 +87,6 @@ const Footer = () => {
             Established in 1995, we are leaders in fire protection systems and
             safety solutions.
           </p>
-          <div style={socialLinksStyle}>
-            <a href="#" style={socialIconStyle} aria-label="Facebook">
-              📱
-            </a>
-            <a href="#" style={socialIconStyle} aria-label="Twitter">
-              🐦
-            </a>
-            <a href="#" style={socialIconStyle} aria-label="LinkedIn">
-              💼
-            </a>
-          </div>
         </div>
 
         <div style={footerSectionStyle}>
@@ -111,10 +100,13 @@ const Footer = () => {
           <Link to="/services" style={linkStyle}>
             Our Services
           </Link>
-          <Link to="/projects" style={linkStyle}>
-            Projects
+          <Link to="/products" style={linkStyle}>
+            Our Products
           </Link>
-          <Link to="/contact" style={linkStyle}>
+          <Link to="/clients" style={linkStyle}>
+            Our Clients
+          </Link>
+           <Link to="/contact" style={linkStyle}>
             Contact Us
           </Link>
         </div>
