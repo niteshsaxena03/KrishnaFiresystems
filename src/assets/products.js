@@ -214,6 +214,21 @@ const imageSet = [
     secondary:
       "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
   },
+  {
+    primary: "/SafetyEquipment-1.png",
+    secondary:
+      "https://media.istockphoto.com/id/928700066/photo/firefighter.jpg?s=612x612&w=0&k=20&c=gIbAcuhvtUXQc0kJyx7oZbmK9LWOySx0E15wMhw7Pag=",
+  },
+  {
+    primary: "/SafetyEquipment-2.png",
+    secondary:
+      "https://media.istockphoto.com/id/928700066/photo/firefighter.jpg?s=612x612&w=0&k=20&c=gIbAcuhvtUXQc0kJyx7oZbmK9LWOySx0E15wMhw7Pag=",
+  },
+  {
+    primary: "/SafetyEquipment-3.png",
+    secondary:
+      "https://media.istockphoto.com/id/928700066/photo/firefighter.jpg?s=612x612&w=0&k=20&c=gIbAcuhvtUXQc0kJyx7oZbmK9LWOySx0E15wMhw7Pag=",
+  },
 ];
 
 export { imageSet };

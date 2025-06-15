@@ -223,6 +223,21 @@ const Products = () => {
       category: "alarm-systems",
       image: imageSet[42],
     },
+    {
+      id: 44,
+      category: "safety-equipment",
+      image: imageSet[43],
+    },
+    {
+      id: 45,
+      category: "safety-equipment",
+      image: imageSet[44],
+    },
+    {
+      id: 46,
+      category: "safety-equipment",
+      image: imageSet[45],
+    },
   ];
 
   // Filter products based on active category
