@@ -10,7 +10,7 @@ const Products = () => {
   // Product categories
   const categories = [
     { id: "fire-extinguishers", name: "Fire Extinguishers" },
-    { id: "hydrant-systems", name: "Hydrant Systems" },
+    { id: "hydrant-systems", name: "Hydrants & Sprinklers" },
     { id: "suppression-systems", name: "Suppression Systems" },
     { id: "alarm-systems", name: "Alarm Systems" },
     { id: "safety-equipment", name: "Safety Equipment" },
@@ -98,6 +98,86 @@ const Products = () => {
       id: 16,
       category: "fire-extinguishers",
       image: imageSet[15],
+    },
+    {
+      id: 17,
+      category: "hydrant-systems",
+      image: imageSet[16],
+    },
+    {
+      id: 18,
+      category: "hydrant-systems",
+      image: imageSet[17],
+    },
+    {
+      id: 19,
+      category: "hydrant-systems",
+      image: imageSet[18],
+    },
+    {
+      id: 20,
+      category: "hydrant-systems",
+      image: imageSet[19],
+    },
+    {
+      id: 21,
+      category: "hydrant-systems",
+      image: imageSet[20],
+    },
+    {
+      id: 22,
+      category: "hydrant-systems",
+      image: imageSet[21],
+    },
+    {
+      id: 23,
+      category: "hydrant-systems",
+      image: imageSet[22],
+    },
+    {
+      id: 24,
+      category: "hydrant-systems",
+      image: imageSet[23],
+    },
+    {
+      id: 25,
+      category: "hydrant-systems",
+      image: imageSet[24],
+    },
+    {
+      id: 26,
+      category: "hydrant-systems",
+      image: imageSet[25],
+    },
+    {
+      id: 27,
+      category: "hydrant-systems",
+      image: imageSet[26],
+    },
+    {
+      id: 28,
+      category: "hydrant-systems",
+      image: imageSet[27],
+    },
+    {
+      id: 29,
+      category: "hydrant-systems",
+      image: imageSet[28],
+    },
+    {
+      id: 30,
+      category: "hydrant-systems",
+      image: imageSet[29],
+    },
+    {
+      id: 31,
+      category: "hydrant-systems",
+      image: imageSet[30],
+    },
+    {
+      id: 32,
+      category: "hydrant-systems",
+      image: imageSet[31],
     },
   ];
 

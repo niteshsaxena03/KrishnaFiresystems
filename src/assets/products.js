@@ -79,6 +79,86 @@ const imageSet = [
     secondary:
       "https://media.istockphoto.com/id/459269871/photo/fighting-a-fire.jpg?s=612x612&w=0&k=20&c=QRJKFRINXFLiew5vaMBTylxU1LVau9oqY3CNlSfRCLI=",
   },
+  {
+    primary: "/Hydrant-1.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-2.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-3.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-4.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-5.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-6.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-7.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-8.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-9.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-10.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-11.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-12.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-13.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-14.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-15.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
+  {
+    primary: "/Hydrant-16.png",
+    secondary:
+      "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
+  },
 ];
 
 export { imageSet };
