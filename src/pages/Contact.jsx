@@ -458,6 +458,11 @@ const Contact = () => {
 
       {/* Managing Director Section */}
       <div style={directorSectionStyle}>
+        <img
+          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80"
+          alt="Udai Thakur"
+          style={directorImageStyle}
+        />
         <div style={directorInfoStyle}>
           <h3 style={directorNameStyle}>Udai Thakur</h3>
           <p style={directorRoleStyle}>Managing Director</p>
