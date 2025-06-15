@@ -59,6 +59,46 @@ const Products = () => {
       category: "suppression-systems",
       image: imageSet[7],
     },
+    {
+      id: 9,
+      category: "fire-extinguishers",
+      image: imageSet[8],
+    },
+    {
+      id: 10,
+      category: "fire-extinguishers",
+      image: imageSet[9],
+    },
+    {
+      id: 11,
+      category: "fire-extinguishers",
+      image: imageSet[10],
+    },
+    {
+      id: 12,
+      category: "fire-extinguishers",
+      image: imageSet[11],
+    },
+    {
+      id: 13,
+      category: "fire-extinguishers",
+      image: imageSet[12],
+    },
+    {
+      id: 14,
+      category: "fire-extinguishers",
+      image: imageSet[13],
+    },
+    {
+      id: 15,
+      category: "fire-extinguishers",
+      image: imageSet[14],
+    },
+    {
+      id: 16,
+      category: "fire-extinguishers",
+      image: imageSet[15],
+    },
   ];
 
   // Filter products based on active category
