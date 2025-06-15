@@ -2,6 +2,7 @@ import { useState } from "react";
 import { theme } from "../theme";
 import { useMobile } from "../hooks/useMobile";
 import { EquipmentsimageSet as imageSet } from "../assets/equipments";
+import ToolDemoSection from "../components/VideoSection";
 
 const Equipment = () => {
   const isMobile = useMobile();
@@ -380,6 +381,10 @@ const Equipment = () => {
           </div>
         ))}
       </div>
+
+    {/* Video Section */}
+    <ToolDemoSection></ToolDemoSection>
+    
     </div>
   );
 };
