@@ -24,120 +24,56 @@ const Products = () => {
       name: "CO2 Fire Extinguisher",
       origin: "Indian",
       category: "fire-extinguishers",
-      description:
-        "ISI-marked CO2 fire extinguishers for electrical fires, available in various capacities.",
       image: imageSet[0],
-      features: [
-        "ISI Marked",
-        "Pressure Tested",
-        "Multiple Sizes Available",
-        "2-Year Warranty",
-      ],
     },
     {
       id: 2,
       name: "Advanced Fire Alarm Control Panel",
       origin: "Imported",
       category: "alarm-systems",
-      description:
-        "Microprocessor-based addressable fire alarm control panel with multi-zone capabilities.",
       image: imageSet[1],
-      features: [
-        "Addressable Technology",
-        "LCD Display",
-        "Battery Backup",
-        "Multi-Zone Programming",
-      ],
     },
     {
       id: 3,
       name: "Fire Hydrant Valve",
       origin: "Indian",
       category: "hydrant-systems",
-      description:
-        "Single outlet landing valve for fire hydrant systems, manufactured to IS standards.",
       image: imageSet[2],
-      features: [
-        "IS:5290 Compliant",
-        "Working Pressure 15 kg/cm²",
-        "Gunmetal Construction",
-        "Easy Installation",
-      ],
     },
     {
       id: 4,
       name: "NOVEC 1230 Fire Suppression System",
       origin: "Imported",
       category: "suppression-systems",
-      description:
-        "Clean agent fire suppression system ideal for server rooms and sensitive equipment areas.",
       image: imageSet[3],
-      features: [
-        "Environmentally Friendly",
-        "Zero Ozone Depletion",
-        "Rapid Discharge",
-        "Non-Conductive",
-      ],
     },
     {
       id: 5,
       name: "Fire Hose Reel",
       origin: "Indian",
       category: "hydrant-systems",
-      description:
-        "Swing-type fire hose reel with 30m hose, compliant with IS:884 standards.",
       image: imageSet[4],
-      features: [
-        "IS:884 Certified",
-        "30m Hose Length",
-        "Swinging Type",
-        "Easy Operation",
-      ],
     },
     {
       id: 6,
       name: "Advanced Smoke Detector",
       origin: "Imported",
       category: "alarm-systems",
-      description:
-        "Photoelectric smoke detector with advanced false alarm prevention technology.",
       image: imageSet[5],
-      features: [
-        "Dual Sensor Technology",
-        "Early Warning",
-        "Low Battery Alert",
-        "Self-Testing",
-      ],
     },
     {
       id: 7,
       name: "Firefighter Safety Helmet",
       origin: "Indian",
       category: "safety-equipment",
-      description:
-        "High-temperature resistant safety helmet for firefighting personnel.",
       image: imageSet[6],
-      features: [
-        "Heat Resistant",
-        "Impact Protection",
-        "Integrated Visor",
-        "Adjustable Size",
-      ],
     },
     {
       id: 8,
       name: "Automatic Water Sprinkler",
       origin: "Imported",
       category: "suppression-systems",
-      description:
-        "Quick response automatic sprinkler head for ceiling installation in commercial buildings.",
       image: imageSet[7],
-      features: [
-        "Various Temperature Ratings",
-        "Decorative Finish Options",
-        "Standard Thread",
-        "UL Listed",
-      ],
     },
   ];
 
@@ -226,7 +162,7 @@ const Products = () => {
   const productImageStyle = {
     width: "100%",
     height: "100%",
-    objectFit: "contain" ,
+    objectFit: "contain",
     transition: "transform 0.5s ease",
   };
 
@@ -349,36 +285,27 @@ const Products = () => {
             }}
           >
             <div style={productImageContainerStyle}>
-            <img
-              src={product.image.primary}
-              alt={product.name}
-              style={{
-                ...productImageStyle,
-                objectFit: product.id === 4 ? "cover" : productImageStyle?.objectFit || "contain",
-              }}
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = product.image.secondary;
-              }}
-            />
+              <img
+                src={product.image.primary}
+                alt={product.name}
+                style={{
+                  ...productImageStyle,
+                  objectFit:
+                    product.id === 4
+                      ? "cover"
+                      : productImageStyle?.objectFit || "contain",
+                }}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = product.image.secondary;
+                }}
+              />
             </div>
             <div style={productInfoStyle}>
               <h3 style={productNameStyle}>{product.name}</h3>
               <span style={productOriginStyle(product.origin)}>
                 {product.origin} Brand
               </span>
-              <p style={productDescriptionStyle}>{product.description}</p>
-
-              <div style={featuresContainerStyle}>
-                <h4 style={featuresTitleStyle}>Key Features</h4>
-                <div style={featuresListStyle}>
-                  {product.features.map((feature, index) => (
-                    <span key={index} style={featureTagStyle}>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         ))}
