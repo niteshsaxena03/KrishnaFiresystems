@@ -39,12 +39,13 @@ const Contact = () => {
 
   const sendEmail = (formData) => {
     // Prepare parameters to send to EmailJS
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      subject: formData.subject,
-      message: formData.message,
+     const templateParams = {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    subject: formData.subject,
+    message: formData.message,
+    cc_email: "delhi@krishnafiresystems.com", 
     };
 
     emailjs
