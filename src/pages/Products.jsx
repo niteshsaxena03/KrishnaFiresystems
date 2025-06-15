@@ -11,7 +11,6 @@ const Products = () => {
   const categories = [
     { id: "fire-extinguishers", name: "Fire Extinguishers" },
     { id: "hydrant-systems", name: "Hydrants & Sprinklers" },
-    { id: "suppression-systems", name: "Suppression Systems" },
     { id: "alarm-systems", name: "Alarm Systems" },
     { id: "safety-equipment", name: "Safety Equipment" },
     { id: "installations", name: "Installations" },
@@ -35,11 +34,6 @@ const Products = () => {
       image: imageSet[2],
     },
     {
-      id: 4,
-      category: "suppression-systems",
-      image: imageSet[3],
-    },
-    {
       id: 5,
       category: "hydrant-systems",
       image: imageSet[4],
@@ -53,11 +47,6 @@ const Products = () => {
       id: 7,
       category: "safety-equipment",
       image: imageSet[6],
-    },
-    {
-      id: 8,
-      category: "suppression-systems",
-      image: imageSet[7],
     },
     {
       id: 9,
@@ -178,6 +167,61 @@ const Products = () => {
       id: 32,
       category: "hydrant-systems",
       image: imageSet[31],
+    },
+    {
+      id: 33,
+      category: "alarm-systems",
+      image: imageSet[32],
+    },
+    {
+      id: 34,
+      category: "alarm-systems",
+      image: imageSet[33],
+    },
+    {
+      id: 35,
+      category: "alarm-systems",
+      image: imageSet[34],
+    },
+    {
+      id: 36,
+      category: "alarm-systems",
+      image: imageSet[35],
+    },
+    {
+      id: 37,
+      category: "alarm-systems",
+      image: imageSet[36],
+    },
+    {
+      id: 38,
+      category: "alarm-systems",
+      image: imageSet[37],
+    },
+    {
+      id: 39,
+      category: "alarm-systems",
+      image: imageSet[38],
+    },
+    {
+      id: 40,
+      category: "alarm-systems",
+      image: imageSet[39],
+    },
+    {
+      id: 41,
+      category: "alarm-systems",
+      image: imageSet[40],
+    },
+    {
+      id: 42,
+      category: "alarm-systems",
+      image: imageSet[41],
+    },
+    {
+      id: 43,
+      category: "alarm-systems",
+      image: imageSet[42],
     },
   ];
 

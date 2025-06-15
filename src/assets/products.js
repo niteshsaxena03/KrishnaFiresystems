@@ -159,6 +159,61 @@ const imageSet = [
     secondary:
       "https://4.imimg.com/data4/SE/GF/MY-22250097/fire-hydrant-valve-500x500.jpeg",
   },
+  {
+    primary: "/Alarm-1.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-2.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-3.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-4.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-5.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-6.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-7.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-8.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-9.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-10.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
+  {
+    primary: "/Alarm-11.png",
+    secondary:
+      "https://media.istockphoto.com/id/1411760839/photo/activate-fire-alarm-system.jpg?s=612x612&w=0&k=20&c=5ohkuZujrLY_8jJm_bpwEiIKjsSuDcOuRwUL1Bosw3c=",
+  },
 ];
 
 export { imageSet };
