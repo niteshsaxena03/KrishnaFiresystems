@@ -5,83 +5,66 @@ import { imageSet } from "../assets/products";
 
 const Products = () => {
   const isMobile = useMobile();
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("fire-extinguishers");
 
   // Product categories
   const categories = [
-    { id: "all", name: "All Products" },
     { id: "fire-extinguishers", name: "Fire Extinguishers" },
     { id: "hydrant-systems", name: "Hydrant Systems" },
     { id: "suppression-systems", name: "Suppression Systems" },
     { id: "alarm-systems", name: "Alarm Systems" },
     { id: "safety-equipment", name: "Safety Equipment" },
+    { id: "installations", name: "Installations" },
   ];
 
   // Sample products list
   const products = [
     {
       id: 1,
-      name: "CO2 Fire Extinguisher",
-      origin: "Indian",
       category: "fire-extinguishers",
       image: imageSet[0],
     },
     {
       id: 2,
-      name: "Advanced Fire Alarm Control Panel",
-      origin: "Imported",
       category: "alarm-systems",
       image: imageSet[1],
     },
     {
       id: 3,
-      name: "Fire Hydrant Valve",
-      origin: "Indian",
       category: "hydrant-systems",
       image: imageSet[2],
     },
     {
       id: 4,
-      name: "NOVEC 1230 Fire Suppression System",
-      origin: "Imported",
       category: "suppression-systems",
       image: imageSet[3],
     },
     {
       id: 5,
-      name: "Fire Hose Reel",
-      origin: "Indian",
       category: "hydrant-systems",
       image: imageSet[4],
     },
     {
       id: 6,
-      name: "Advanced Smoke Detector",
-      origin: "Imported",
       category: "alarm-systems",
       image: imageSet[5],
     },
     {
       id: 7,
-      name: "Firefighter Safety Helmet",
-      origin: "Indian",
       category: "safety-equipment",
       image: imageSet[6],
     },
     {
       id: 8,
-      name: "Automatic Water Sprinkler",
-      origin: "Imported",
       category: "suppression-systems",
       image: imageSet[7],
     },
   ];
 
   // Filter products based on active category
-  const filteredProducts =
-    activeCategory === "all"
-      ? products
-      : products.filter((product) => product.category === activeCategory);
+  const filteredProducts = products.filter(
+    (product) => product.category === activeCategory
+  );
 
   const containerStyle = {
     maxWidth: "1200px",
@@ -301,12 +284,7 @@ const Products = () => {
                 }}
               />
             </div>
-            <div style={productInfoStyle}>
-              <h3 style={productNameStyle}>{product.name}</h3>
-              <span style={productOriginStyle(product.origin)}>
-                {product.origin} Brand
-              </span>
-            </div>
+            <div style={productInfoStyle}></div>
           </div>
         ))}
       </div>
