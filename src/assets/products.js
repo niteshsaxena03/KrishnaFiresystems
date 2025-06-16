@@ -229,6 +229,27 @@ const imageSet = [
     secondary:
       "https://media.istockphoto.com/id/928700066/photo/firefighter.jpg?s=612x612&w=0&k=20&c=gIbAcuhvtUXQc0kJyx7oZbmK9LWOySx0E15wMhw7Pag=",
   },
+  {
+    primary: "/CO2FloodSystem.jpg",
+    secondary:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc4E9xyBSvS2wbLwUu8r-YUd-zBvnYzAqoUw&s",
+  },
+  {
+    primary: "/MVWS-Deluge.jpg",
+    secondary:
+      "https://5.imimg.com/data5/HG/RG/TB/SELLER-11604497/img-20200304-wa0005.jpg",
+  },
+  {
+    primary: "/FirePump.jpg",
+    secondary:
+      "https://sharksindia.com/images/content-pic/fhs01.jpg",
+  },
+  {
+    primary: "/ppe.jpg",
+  },
+  {
+    primary: "/mvws.jpg",
+  },
 ];
 
 export { imageSet };

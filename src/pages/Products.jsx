@@ -15,6 +15,15 @@ const Products = () => {
     { id: "safety-equipment", name: "Safety Equipment" },
     { id: "installations", name: "Installations" },
   ];
+  
+  const installationData = [
+  "CO2 GAS FLOODING SYSTEM",
+  "MVWS-DELUGE VALVE SYSTEM",
+  "FIRE PUMP ROOM",
+  "ELECTRIC PANEL PROTECTION SYSTEM",
+  "MVWS SYSTEM"
+];
+
 
   // Sample products list
   const products = [
@@ -237,7 +246,31 @@ const Products = () => {
       id: 46,
       category: "safety-equipment",
       image: imageSet[45],
-    },
+    },{ 
+    id: 47, 
+    category: "installations", 
+    image: imageSet[46],
+  },
+  { 
+    id: 48, 
+    category: "installations", 
+    image: imageSet[47],
+  },
+  { 
+    id: 49, 
+    category: "installations", 
+    image: imageSet[48],
+  },
+  { 
+    id: 50, 
+    category: "installations", 
+    image: imageSet[49],
+  },
+  { 
+    id: 51, 
+    category: "installations", 
+    image: imageSet[50],
+  }
   ];
 
   // Filter products based on active category
@@ -453,7 +486,7 @@ const Products = () => {
                 style={{
                   ...productImageStyle,
                   objectFit:
-                    product.id === 4
+                    product.id === 4 || product.category === "installations"
                       ? "cover"
                       : productImageStyle?.objectFit || "contain",
                 }}
@@ -463,7 +496,13 @@ const Products = () => {
                 }}
               />
             </div>
-            <div style={productInfoStyle}></div>
+            <div style={productInfoStyle}>
+            {product.category === "installations" && (
+              <p style={{ textAlign: "center", marginTop: "10px", fontWeight: "bold" }}>
+                {installationData[product.id - 47] || "Installation Item"}
+              </p>
+            )}
+          </div>
           </div>
         ))}
       </div>
