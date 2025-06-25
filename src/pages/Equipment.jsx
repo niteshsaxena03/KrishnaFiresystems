@@ -93,7 +93,7 @@ const Equipment = () => {
       image: imageSet[8],
     },
     {
-      name: "Hydraulic Pump",
+      name: "Hydraulic Pressure Pump",
       quantity: 8,
       category: "other",
       description:

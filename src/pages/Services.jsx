@@ -21,7 +21,7 @@ const Services = () => {
     },
     {
       id: 3,
-      title: "Foam Flooding Systems",
+      title: "CO2 Gas Flooding Systems",
       description:
         "AFFF foam flooding, Deluge valve, Medium Velocity and High Velocity Water Spray (MVWS & HVWS) for liquid paint booth and more.",
       image: "foam.jpg",

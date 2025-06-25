@@ -36,7 +36,7 @@ const EquipmentsimageSet = [
     secondary: "https://operatools.in/wp-content/uploads/2021/02/IMG_20210218_190540_240.jpg",
   },
   {
-    primary: "/hPump.webp",
+    primary: "/HydraulicPump.jpeg",
     secondary: "https://media.istockphoto.com/id/1480612657/photo/hydraulic-motors-pumps.jpg?s=612x612&w=0&k=20&c=-CKnZTFJ2Ze394-PehrtYj0t6GbDBy-Iz33bkaTx-0w=",
   },
 ];
