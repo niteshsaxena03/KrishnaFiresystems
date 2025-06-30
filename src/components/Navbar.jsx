@@ -32,6 +32,7 @@ const Navbar = () => {
     { path: "/clients", label: "Clients" },
     { path: "/equipment", label: "Tools & Equipments" },
     { path: "/contact", label: "Contact" },
+    { path: "/careers", label: "Career" },
   ];
 
   const toggleMenu = () => {

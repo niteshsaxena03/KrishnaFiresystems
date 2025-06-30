@@ -7,6 +7,8 @@ import Products from "../pages/Products";
 import Clients from "../pages/Clients";
 import Equipment from "../pages/Equipment";
 import Contact from "../pages/Contact";
+import Careers from "../pages/Careers";
+
 import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes = () => {
@@ -22,6 +24,7 @@ const AppRoutes = () => {
         <Route path="/clients" element={<Clients />} />
         <Route path="/equipment" element={<Equipment />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<Careers/>} />
       </Route>
     </Routes>
    </>
